@@ -1,0 +1,21 @@
+<div  class="card shadow mt-2 " style="min-height: 380px;" >
+  <img class="card-img-top " [src]="producto.image" alt="Title" />
+  <div class="card-body align-bottom">
+    @if (producto.state === false) {
+    <span
+      class="badge bg-danger"
+      >No disponible!</span
+    >}
+    <h4 class="card-title ">{{ producto.name }}</h4>
+    <p class="card-text">{{producto.price | currency}}</p>
+    <button class="btn bg-success-subtle">
+      <i class="fa-solid fa-cart-shopping"></i>
+    </button>
+    <button class="btn bg-danger-subtle ms-1">
+      <i class="fa-solid fa-heart"></i>
+    </button>
+    <button (click)="verInfo(producto.id)" class="btn bg-warning-subtle ms-1">
+      <i class="fa-solid fa-eye"></i>
+    </button>
+  </div>
+</div>
